@@ -29,7 +29,7 @@
 .certificate-name {
   position: absolute;
   left: 50%;
-  top: 33.9%;
+  top: 34.9%;
   transform: translate(-50%, -100%);
   display: flex;
   justify-content: center;
@@ -46,11 +46,11 @@
   display: block;
   max-width: 100%;
   margin: 0;
-  padding: 0 0.7em 0.4em;
+  padding: 0 0.7em 0.1em;
   border: 0;
-  border-bottom: 0.16cqi solid #16325c;
+  border-bottom: 0.42cqi solid #0b1c38;
   font-family: 'Times New Roman', Times, Georgia, serif;
-  font-size: 3.2cqi;
+  font-size: 5.2cqi;
   font-weight: 700;
   font-style: normal;
   color: #0a0a0a;
@@ -64,21 +64,21 @@
 }
 
 .certificate-name--long .certificate-name-text {
-  font-size: 2.7cqi;
+  font-size: 4.4cqi;
   letter-spacing: 0.04em;
-  padding-bottom: 0.38em;
+  padding-bottom: 0.1em;
 }
 
 .certificate-name--xlong .certificate-name-text {
-  font-size: 2.25cqi;
+  font-size: 2.70cqi;
   letter-spacing: 0.03em;
-  padding-bottom: 0.36em;
+  padding-bottom: 0.1em;
 }
 
 .certificate-name--xxlong .certificate-name-text {
   font-size: 1.9cqi;
   letter-spacing: 0.02em;
-  padding-bottom: 0.34em;
+  padding-bottom: 0.1em;
 }
 
 .certificate-urn {
