@@ -1,0 +1,96 @@
+/* Off-screen fixed-size render — same output on mobile and desktop */
+.certificate-export-host {
+  position: fixed;
+  left: -10000px;
+  top: 0;
+  z-index: -1;
+  width: 1491px;
+  pointer-events: none;
+}
+
+.certificate--fixed {
+  position: relative;
+  width: 1491px;
+  max-width: 1491px;
+  line-height: 1;
+  container-type: inline-size;
+}
+
+.certificate-template {
+  display: block;
+  width: 1491px;
+  height: auto;
+}
+
+/* Anchored above "for your active participation" — bottom edge sits in the name gap */
+.certificate-name {
+  position: absolute;
+  left: 50%;
+  top: 41%;
+  transform: translate(-50%, calc(-100% - 0.55%));
+  width: max-content;
+  max-width: 88%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  pointer-events: none;
+}
+
+.certificate-name-text {
+  display: inline-block;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 0 0.08em;
+  border: 0;
+  border-bottom: 0.1cqi solid #0a0a0a;
+  font-family: 'Times New Roman', Times, Georgia, serif;
+  font-size: 4.35cqi;
+  font-weight: 700;
+  font-style: normal;
+  color: #0a0a0a;
+  letter-spacing: 0.06em;
+  line-height: 1.05;
+  white-space: nowrap;
+  text-transform: uppercase;
+  background: transparent;
+  box-shadow: none;
+  -webkit-text-fill-color: #0a0a0a;
+}
+
+.certificate-name--long .certificate-name-text {
+  font-size: 3.75cqi;
+  letter-spacing: 0.045em;
+}
+
+.certificate-name--xlong .certificate-name-text {
+  font-size: 3.2cqi;
+  letter-spacing: 0.035em;
+}
+
+.certificate-name--xxlong .certificate-name-text {
+  font-size: 2.75cqi;
+  letter-spacing: 0.025em;
+}
+
+.certificate-urn {
+  position: absolute;
+  right: 5%;
+  bottom: 6%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  max-width: 32%;
+  text-align: right;
+  font-family: 'Times New Roman', Times, Georgia, serif;
+  font-size: 1.28cqi;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+  white-space: nowrap;
+  color: #121212;
+  background: transparent;
+  box-shadow: none;
+  pointer-events: none;
+  -webkit-text-fill-color: #121212;
+}

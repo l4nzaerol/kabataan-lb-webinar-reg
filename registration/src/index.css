@@ -1,0 +1,111 @@
+:root {
+  --text: rgba(255, 235, 235, 0.78);
+  --text-h: #fff8f8;
+  --text-muted: rgba(255, 220, 220, 0.62);
+  --bg: #140608;
+  --bg-glass: rgba(28, 6, 10, 0.62);
+  --bg-glass-strong: rgba(18, 4, 6, 0.78);
+  --bg-input: rgba(0, 0, 0, 0.28);
+  --border: rgba(255, 180, 180, 0.14);
+  --border-strong: rgba(255, 140, 140, 0.28);
+  --code-bg: rgba(255, 60, 60, 0.12);
+  --accent: #f73131;
+  --accent-deep: #c8102e;
+  --accent-glow: rgba(247, 49, 49, 0.35);
+  --accent-bg: rgba(247, 49, 49, 0.14);
+  --accent-border: rgba(255, 120, 120, 0.38);
+  --shadow:
+    0 24px 48px rgba(0, 0, 0, 0.38),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.28);
+
+  --sans: 'Segoe UI', system-ui, Roboto, sans-serif;
+  --heading: Georgia, 'Times New Roman', serif;
+  --mono: ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  font: 17px/150% var(--sans);
+  letter-spacing: 0.01em;
+  color-scheme: dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0a0204;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: #0a0204;
+  overflow-x: hidden;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  letter-spacing: 0.04em;
+  margin: 0 0 12px;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: #ffb4b4;
+  text-decoration-color: rgba(255, 180, 180, 0.45);
+  transition: color 0.2s, text-decoration-color 0.2s;
+
+  &:hover {
+    color: #fff;
+    text-decoration-color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+code {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: #ffd0d0;
+  font-size: 0.88em;
+  line-height: 135%;
+  padding: 3px 7px;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+}

@@ -1,0 +1,776 @@
+.page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(20px, 4vw, 40px) clamp(12px, 3vw, 20px) clamp(32px, 5vw, 56px);
+  gap: clamp(18px, 3vw, 28px);
+  background:
+    linear-gradient(180deg, rgba(10, 2, 4, 0.35) 0%, rgba(10, 2, 4, 0.55) 100%),
+    url('/background.png') center / cover no-repeat scroll;
+  min-height: calc(100svh - 57px);
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  max-width: min(560px, 100%);
+  text-align: center;
+  padding: 0 4px;
+}
+
+.page .header .eyebrow {
+  color: rgba(255, 210, 210, 0.88);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+}
+
+.page .header h1 {
+  color: #fff;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.45);
+}
+
+.page .header h1.site-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-size: clamp(1.7rem, 6vw, 2.85rem);
+  line-height: 1;
+  letter-spacing: 0.06em;
+}
+
+.page .header h1.site-title span {
+  display: block;
+  font-size: clamp(0.72rem, 3.6vw, 1.18rem);
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.page .header .subtitle {
+  color: rgba(255, 240, 240, 0.88);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+  font-size: clamp(0.88rem, 2.4vw, 1.1rem);
+  line-height: 1.55;
+  max-width: min(480px, 100%);
+  margin: 0 auto;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.app-shell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.config-banner {
+  background: rgba(40, 8, 12, 0.92);
+  border-bottom: 1px solid var(--border);
+  color: var(--text-h);
+  font-size: 13px;
+  padding: 10px 16px;
+  text-align: center;
+}
+
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  padding: 12px clamp(8px, 2vw, 16px) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(20, 4, 6, 0.72);
+  backdrop-filter: blur(16px);
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav-tab {
+  font: inherit;
+  font-size: clamp(12px, 2.8vw, 14px);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 10px clamp(14px, 3vw, 20px);
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: rgba(255, 220, 220, 0.55);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  &.active {
+    color: #fff;
+    border-bottom-color: var(--accent);
+  }
+
+  &:hover {
+    color: rgba(255, 240, 240, 0.92);
+  }
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 190, 190, 0.82);
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+/* ── Glass card system ── */
+.card {
+  position: relative;
+  width: 100%;
+  max-width: min(520px, 100%);
+  overflow: hidden;
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0;
+  text-align: left;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+}
+
+.card--wide {
+  max-width: min(640px, 100%);
+}
+
+.card-accent {
+  display: block;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--accent) 20%,
+    #ff8a6a 50%,
+    var(--accent) 80%,
+    transparent 100%
+  );
+  opacity: 0.9;
+}
+
+.card-inner {
+  padding: clamp(22px, 4vw, 32px) clamp(16px, 3.5vw, 28px) clamp(20px, 3.5vw, 28px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 170, 170, 0.72);
+  text-align: center;
+  margin: 0;
+}
+
+.card-title {
+  font-family: var(--heading);
+  font-size: clamp(1.35rem, 3.5vw, 1.65rem);
+  font-weight: 600;
+  color: var(--text-h);
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+.card-desc {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  text-align: center;
+  margin: -8px 0 0;
+}
+
+.card-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 160, 160, 0.22),
+    transparent
+  );
+  margin: 0;
+  border: none;
+}
+
+/* ── Claim certificate card (unique) ── */
+.card--claim .card-inner {
+  align-items: stretch;
+  gap: 18px;
+}
+
+.code-input-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.code-input-wrap label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 190, 190, 0.75);
+  text-align: center;
+}
+
+.code-input {
+  font-family: var(--mono);
+  font-size: clamp(0.95rem, 2.8vw, 1.1rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 16px 18px;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  background: var(--bg-input);
+  color: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &::placeholder {
+    color: rgba(255, 200, 200, 0.28);
+    text-transform: none;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: rgba(255, 100, 100, 0.55);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+  }
+}
+
+.card-footnote {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  text-align: center;
+  margin: 0;
+}
+
+.card-footnote a {
+  font-weight: 500;
+}
+
+/* ── Forms ── */
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 190, 190, 0.72);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font: inherit;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-input);
+  color: var(--text-h);
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &::placeholder {
+    color: rgba(255, 200, 200, 0.28);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: rgba(255, 100, 100, 0.5);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+  }
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.error {
+  font-size: 12px;
+  color: #ff9a9a;
+}
+
+.form-error {
+  font-size: 0.88rem;
+  color: #ffb0b0;
+  text-align: center;
+  margin: 0;
+  padding: 10px 14px;
+  background: rgba(180, 20, 30, 0.22);
+  border: 1px solid rgba(255, 100, 100, 0.22);
+  border-radius: 10px;
+  line-height: 1.45;
+}
+
+.verified-note {
+  font-size: 14px;
+  color: var(--text-h);
+  margin: 0;
+}
+
+/* ── E-Certificate claim ready ── */
+.page--ecert-ready {
+  gap: clamp(18px, 3vw, 28px);
+}
+
+.page--ecert-ready .header .subtitle strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.card--ecert-ready .card-inner {
+  align-items: center;
+  text-align: center;
+}
+
+.ecert-ready-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #f73131, #c8102e);
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(247, 49, 49, 0.35);
+}
+
+.ecert-code-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 12px;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.ecert-code-value {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  font-family: var(--mono);
+  font-size: clamp(0.72rem, 2.5vw, 0.9rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #fff;
+  white-space: nowrap;
+  line-height: 1.2;
+  text-align: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.ecert-code-value::-webkit-scrollbar {
+  display: none;
+}
+
+.ecert-code-value--medium {
+  font-size: clamp(0.66rem, 2.2vw, 0.82rem);
+  letter-spacing: 0.03em;
+}
+
+.ecert-code-value--long {
+  font-size: clamp(0.6rem, 1.95vw, 0.74rem);
+  letter-spacing: 0.025em;
+}
+
+.btn--claim-cert {
+  margin-top: 4px;
+}
+
+.card--ecert-ready .card-footnote {
+  max-width: 360px;
+}
+
+.ecert-card-divider {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.ecert-card-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.ecert-card-logo img {
+  width: min(280px, 72vw);
+  height: auto;
+  opacity: 0.92;
+  display: block;
+}
+
+/* ── Buttons ── */
+.btn {
+  font: inherit;
+  font-size: clamp(13px, 2.8vw, 14px);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: clamp(12px, 2.5vw, 14px) clamp(20px, 4vw, 28px);
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.2s, background 0.2s, border-color 0.2s;
+
+  &:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(255, 160, 160, 0.8);
+    outline-offset: 2px;
+  }
+
+  &:not(:disabled):active {
+    transform: translateY(1px);
+  }
+}
+
+.btn-primary {
+  width: 100%;
+  max-width: 320px;
+  color: #fff;
+  background: linear-gradient(135deg, #f73131 0%, #c8102e 100%);
+  box-shadow: 0 8px 24px rgba(200, 16, 46, 0.35);
+
+  &:hover:not(:disabled) {
+    box-shadow: 0 12px 28px rgba(247, 49, 49, 0.42);
+    background: linear-gradient(135deg, #ff4545 0%, #d81838 100%);
+  }
+}
+
+.btn-secondary {
+  color: var(--text-h);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--border-strong);
+
+  &:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 160, 160, 0.45);
+  }
+}
+
+.registration-form .btn-primary,
+.success-card .btn-primary,
+.card--claim .btn-primary,
+.card--ecert-ready .btn-primary {
+  align-self: center;
+}
+
+.btn-copy {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  padding: 8px 14px;
+  color: var(--text-h);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+
+  &:hover {
+    border-color: var(--accent-border);
+    background: var(--accent-bg);
+  }
+}
+
+/* ── Success card ── */
+.success-card .card-inner {
+  text-align: center;
+  align-items: center;
+}
+
+.success-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #f73131, #c8102e);
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(247, 49, 49, 0.35);
+}
+
+.success-card h1 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin: 0;
+}
+
+.success-message {
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--text);
+  max-width: 420px;
+
+  strong {
+    color: var(--text-h);
+  }
+}
+
+.registration-number-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+}
+
+.registration-code-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.registration-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 180, 180, 0.65);
+}
+
+.registration-number {
+  font-family: var(--mono);
+  font-size: clamp(1.15rem, 4vw, 1.65rem);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #fff;
+  word-break: break-all;
+}
+
+.registration-note {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin: 0;
+  text-align: center;
+}
+
+.zoom-link-box {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  margin-top: 8px;
+  padding: 16px;
+  border: 1px solid rgba(255, 190, 190, 0.25);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.zoom-link-btn {
+  text-decoration: none;
+  min-width: 220px;
+}
+
+.summary {
+  width: 100%;
+  text-align: left;
+  padding-top: 4px;
+  border-top: 1px solid var(--border);
+
+  h2 {
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 190, 190, 0.75);
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  dl {
+    margin: 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  dl > div {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+  }
+
+  dt {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 180, 180, 0.55);
+  }
+
+  dd {
+    margin: 0;
+    color: var(--text-h);
+    font-size: 0.95rem;
+  }
+}
+
+/* ── Loading card ── */
+.loading-card .card-inner {
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding: 36px 28px;
+}
+
+.loading-spinner {
+  width: 36px;
+  height: 36px;
+  border: 2px solid rgba(255, 160, 160, 0.18);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.85s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  max-width: 340px;
+}
+
+@media (max-width: 1024px) {
+  .page {
+    padding: 24px 14px 40px;
+    gap: 20px;
+  }
+}
+
+.logo-container {
+  width: 100%;
+  max-width: min(640px, 100%);
+  margin-top: 4px;
+  padding: 0 clamp(12px, 3vw, 20px);
+  text-align: center;
+}
+
+.footer-logo {
+  width: min(400px, 88vw);
+  max-width: 100%;
+  height: auto;
+  opacity: 0.9;
+  display: inline-block;
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 18px 10px 32px;
+    gap: 16px;
+    min-height: calc(100svh - 52px);
+  }
+
+  .card-inner {
+    gap: 16px;
+  }
+
+  .registration-form {
+    gap: 14px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 11px 12px;
+    font-size: 16px;
+  }
+
+  .code-input {
+    padding: 14px 12px;
+    font-size: 16px;
+  }
+
+  .btn-primary {
+    max-width: none;
+  }
+
+  .registration-code-row {
+    flex-direction: column;
+  }
+
+  .footer-logo {
+    width: min(320px, 90vw);
+  }
+}
+
+@media (min-width: 768px) {
+  .btn-primary {
+    width: auto;
+    min-width: 220px;
+  }
+}
