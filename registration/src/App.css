@@ -7,7 +7,7 @@
   gap: clamp(18px, 3vw, 28px);
   background:
     linear-gradient(180deg, rgba(10, 2, 4, 0.35) 0%, rgba(10, 2, 4, 0.55) 100%),
-    url('/background.png') center / cover no-repeat scroll;
+    url('/background.jpg') center / cover no-repeat scroll;
   min-height: calc(100svh - 57px);
   width: 100%;
 }
@@ -44,8 +44,9 @@
   font-size: clamp(0.72rem, 3.6vw, 1.18rem);
   letter-spacing: 0.06em;
   font-weight: 600;
-  line-height: 1.15;
-  white-space: nowrap;
+  line-height: 1.25;
+  text-align: center;
+  white-space: normal;
 }
 
 .page .header .subtitle {

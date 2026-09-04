@@ -305,7 +305,11 @@ function RegistrationPage() {
         <p className="eyebrow"></p>
         <h1 className="site-title">
           BAGONG CABUYAO
-          <span>KABATAANG LINGKOD BAYANI WEBINAR</span>
+          <span>
+            KABATAANG LINGKOD BAYANI
+            <br />
+            WEBINAR
+          </span>
         </h1>
         <p className="subtitle">
       
@@ -660,8 +664,15 @@ function CertificatePage() {
     return (
       <div className="page page--ecert-ready">
         <header className="header">
-          <p className="eyebrow">KABATAANG LINGKOD BAYANI WEBINAR</p>
-          <h1>Participants&apos; E-Certificate</h1>
+          <p className="eyebrow"></p>
+          <h1 className="site-title">
+            BAGONG CABUYAO
+            <span>
+              KABATAANG LINGKOD BAYANI
+              <br />
+              WEBINAR
+            </span>
+          </h1>
           <p className="subtitle">
             Congratulations, <strong>{certificateData.fullName}</strong>
           </p>
@@ -722,13 +733,20 @@ function CertificatePage() {
 
   return (
     <div className="page">
-      <header className="header">
-        <p className="eyebrow">KABATAANG LINGKOD BAYANI WEBINAR</p>
-        <h1>KABATAANG LINGKOD BAYANI WEBINAR</h1>
+        <header className="header">
+          <p className="eyebrow"></p>
+          <h1 className="site-title">
+            BAGONG CABUYAO
+            <span>
+              KABATAANG LINGKOD BAYANI
+              <br />
+              WEBINAR
+            </span>
+          </h1>
           <p className="subtitle">
-          Enter your registration code after submitting the feedback Google Form to claim the E-certificate
-        </p>
-      </header>
+            Enter your registration code after submitting the feedback Google Form to claim the E-certificate
+          </p>
+        </header>
 
       <section className="card card--claim">
         <span className="card-accent" aria-hidden="true" />
