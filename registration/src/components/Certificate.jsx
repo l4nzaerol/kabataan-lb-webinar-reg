@@ -119,5 +119,5 @@ export async function downloadCertificate() {
   const y = (pageHeight - renderHeight) / 2
 
   pdf.addImage(imgData, 'PNG', x, y, renderWidth, renderHeight)
-  pdf.save('Dunong-Webinar-Certificate.pdf')
+  pdf.save('KABATAANG LINGKOD BAYANI-Webinar-Certificate.pdf')
 }
