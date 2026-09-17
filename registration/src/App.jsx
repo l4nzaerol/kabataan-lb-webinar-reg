@@ -9,7 +9,7 @@ import Certificate, { downloadCertificate } from './components/Certificate'
 import './App.css'
 
 const GOOGLE_FORM_URL = import.meta.env.VITE_GOOGLE_FORM_URL || ''
-const ZOOM_URL = import.meta.env.VITE_ZOOM_URL || 'https://zoom.us/j/97660103140?pwd=AafhCgNuG6qx4xlFqJapMGBtV9aFi9.1'
+const ZOOM_URL = import.meta.env.VITE_ZOOM_URL || 'https://zoom.us/j/94796195211'
 const APP_MODE = import.meta.env.VITE_APP_MODE || 'both'
 const IS_REGISTER_ONLY = APP_MODE === 'register'
 const IS_CERTIFICATE_ONLY = APP_MODE === 'certificate'
